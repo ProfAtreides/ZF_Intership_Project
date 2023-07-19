@@ -69,5 +69,11 @@ namespace Draft
             }
 
         }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window _window = new ItemInsterion();
+            _window.Show();
+        }
     }
 }
