@@ -31,8 +31,8 @@ namespace Draft
 
             // TODO later move to a seperate class
 
-           GridLength gridLength = new GridLength(25);
-            GridLength gridWidth = new GridLength(500);
+           GridLength gridLength = new GridLength(30);
+            GridLength gridWidth = new GridLength(250);
 
            ColumnDefinition _nameCol = new ColumnDefinition();
            ColumnDefinition _quantityCol = new ColumnDefinition();
@@ -43,12 +43,12 @@ namespace Draft
             ItemList.ColumnDefinitions.Add(_nameCol);
             ItemList.ColumnDefinitions.Add(_quantityCol);
 
-           for (int i = 0;i<10;i++)
-            {
-                var _item = storage.FirstOrDefault(Items => Items.Id == i - 1);
+            const int FONT_SIZE = 15;
 
-               // if (_item == null) break;
-                
+            int i = 1;
+
+           foreach(var _item in storage)
+            {
                 RowDefinition _rowDef = new RowDefinition();
                 _rowDef.Height = gridLength;
 
@@ -57,11 +57,13 @@ namespace Draft
 
                 TextBlock _name = new TextBlock();
                 TextBlock _quanitity = new TextBlock();
-                _quanitity.FontSize = 20;
-                _quanitity.Text = i.ToString();
-                _name.Text = "IDK" + i;
-                _name.FontSize = 20;
-               
+
+                _name.Text = _item.Name;
+                _name.FontSize = FONT_SIZE;
+
+                _quanitity.FontSize = FONT_SIZE;
+                _quanitity.Text = _item.Quantity.ToString();
+
                 Grid.SetRow(_name, i);
                 Grid.SetColumn(_name, 0);
                 Grid.SetRow(_quanitity, i);
@@ -70,6 +72,8 @@ namespace Draft
 
                 ItemList.Children.Add(_name);
                 ItemList.Children.Add(_quanitity);
+
+                i++;
             }
 
         }

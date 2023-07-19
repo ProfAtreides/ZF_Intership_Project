@@ -15,6 +15,16 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="586" RenderTransformOrigin="0.498,1.232"/>
         <Button Content="Filter" HorizontalAlignment="Left" Margin="601,9,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Search" HorizontalAlignment="Left" Margin="707,9,0,0" VerticalAlignment="Top" Width="75"/>
-        <Grid Name="ItemList" HorizontalAlignment="Left" Height="346" Margin="10,38,0,0" Width="772"/>
-    </Grid>
+        <Grid Name="ItemList" HorizontalAlignment="Left" Height="346" Margin="10,38,0,0" Width="772">
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="125"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Name" FontSize="15" Grid.Column="0" Grid.Row="0" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+        <TextBlock Text="Quantity" FontSize="15" Grid.Column="1" Grid.Row="0" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Stretch"/>
+            </Grid>
+        </Grid>
 </Window>
