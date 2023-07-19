@@ -34,14 +34,6 @@ namespace Draft
            GridLength gridLength = new GridLength(30);
             GridLength gridWidth = new GridLength(250);
 
-           ColumnDefinition _nameCol = new ColumnDefinition();
-           ColumnDefinition _quantityCol = new ColumnDefinition();
-            _nameCol.Width = gridWidth;
-            _quantityCol.Width = new GridLength(15);
-
-
-            ItemList.ColumnDefinitions.Add(_nameCol);
-            ItemList.ColumnDefinitions.Add(_quantityCol);
 
             const int FONT_SIZE = 15;
 

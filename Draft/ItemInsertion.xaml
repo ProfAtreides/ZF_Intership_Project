@@ -1,0 +1,15 @@
+﻿<Window x:Class="Draft.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Draft"
+        mc:Ignorable="d"
+        Title="Window1" Height="450" Width="800" Background="LightGray">
+    <Grid >
+        <Button Content="Back" HorizontalAlignment="Left" Height="21" Margin="10,369,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Content="Insert" HorizontalAlignment="Left" Height="21" Margin="711,369,0,0" VerticalAlignment="Top" Width="71"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,39,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.153,0.435"/>
+        <TextBlock HorizontalAlignment="Left" Margin="47,39,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Height="23" Width="43"/>
+    </Grid>
+</Window>
