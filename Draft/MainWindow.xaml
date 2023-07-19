@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Draft"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Name="MainPanel">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -15,22 +15,6 @@
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="586" RenderTransformOrigin="0.498,1.232"/>
         <Button Content="Filter" HorizontalAlignment="Left" Margin="601,9,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Search" HorizontalAlignment="Left" Margin="707,9,0,0" VerticalAlignment="Top" Width="75"/>
-        <Grid HorizontalAlignment="Left" Height="346" Margin="10,38,0,0" Width="772">
-            <Grid Margin="0,0,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="LightGray" Height="20">
-                <TextBlock Text="Testing" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
-            </Grid>
-            <Grid Margin="0,21,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="LightGray" Height="20">
-                <TextBlock Text="Testing" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
-            </Grid>
-            <Grid Margin="0,42,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="LightGray" Height="20">
-                <TextBlock Text="Testing" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
-            </Grid>
-            <Grid Margin="0,63,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="LightGray" Height="20">
-                <TextBlock Text="Testing" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
-            </Grid>
-            <Grid Margin="0,84,0,0" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="LightGray" Height="20">
-                <TextBlock Text="Testing" HorizontalAlignment="Left" VerticalAlignment="Center" IsHitTestVisible="False"/>
-            </Grid>
-        </Grid>
+        <Grid Name="ItemList" HorizontalAlignment="Left" Height="346" Margin="10,38,0,0" Width="772"/>
     </Grid>
 </Window>

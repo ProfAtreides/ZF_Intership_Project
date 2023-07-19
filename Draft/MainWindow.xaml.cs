@@ -22,17 +22,56 @@ namespace Draft
     {
         public MainWindow()
         {
+
             InitializeComponent();
 
-           Core.WarehouseManagament db = new Core.WarehouseManagament();
+            WarehouseDataEntities db = new WarehouseDataEntities();
 
-            var items = from Name in db.Items select Name;
+            var storage = from d in db.Items select d;
 
-            foreach(var item in items)
+            // TODO later move to a seperate class
+
+           GridLength gridLength = new GridLength(25);
+            GridLength gridWidth = new GridLength(500);
+
+           ColumnDefinition _nameCol = new ColumnDefinition();
+           ColumnDefinition _quantityCol = new ColumnDefinition();
+            _nameCol.Width = gridWidth;
+            _quantityCol.Width = new GridLength(15);
+
+
+            ItemList.ColumnDefinitions.Add(_nameCol);
+            ItemList.ColumnDefinitions.Add(_quantityCol);
+
+           for (int i = 0;i<10;i++)
             {
-                Console.WriteLine(item.Name);
-                Console.WriteLine(item.Quantity)
+                var _item = storage.FirstOrDefault(Items => Items.Id == i - 1);
+
+               // if (_item == null) break;
+                
+                RowDefinition _rowDef = new RowDefinition();
+                _rowDef.Height = gridLength;
+
+                
+                ItemList.RowDefinitions.Add(_rowDef);
+
+                TextBlock _name = new TextBlock();
+                TextBlock _quanitity = new TextBlock();
+                _quanitity.FontSize = 20;
+                _quanitity.Text = i.ToString();
+                _name.Text = "IDK" + i;
+                _name.FontSize = 20;
+               
+                Grid.SetRow(_name, i);
+                Grid.SetColumn(_name, 0);
+                Grid.SetRow(_quanitity, i);
+                Grid.SetColumn(_quanitity, 1);
+
+
+                ItemList.Children.Add(_name);
+                ItemList.Children.Add(_quanitity);
             }
+
         }
     }
 }

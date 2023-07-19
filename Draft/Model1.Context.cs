@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Draft.Core
+namespace Draft
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class WarehouseManagament : DbContext
+    public partial class WarehouseDataEntities : DbContext
     {
-        public WarehouseManagament()
-            : base("name=WarehouseManagament")
+        public WarehouseDataEntities()
+            : base("name=WarehouseDataEntities")
         {
         }
     

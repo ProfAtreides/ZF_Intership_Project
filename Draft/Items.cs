@@ -16,32 +16,7 @@ namespace Draft
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Number { get; set; }
+        public int Quantity { get; set; }
         public string Filters { get; set; }
-
-        public Items(string name, string filters)
-        {
-            Name = name;
-            Number = 1;
-            // TODO implement adding filters
-            filters.Split(',');
-        }
-
-        public Items()
-        {
-        }
-
-        ~Items()
-        {
-        }
-        void Add()
-        {
-            Number++;
-        }
-
-        void Remove()
-        {
-            if (Number > 0) Number--;
-        }
     }
 }
