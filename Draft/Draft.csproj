@@ -83,6 +83,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Class1.cs" />
+    <Compile Include="DatabaseHandler.cs" />
+    <Compile Include="DatabaseEventHandler.cs" />
     <Compile Include="ItemInsertion.xaml.cs">
       <DependentUpon>ItemInsertion.xaml</DependentUpon>
     </Compile>
@@ -157,13 +159,6 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="DataBase.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="DataBase_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>DataBase.mdf</DependentUpon>
-    </Content>
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Warehouse.edmx</DependentUpon>

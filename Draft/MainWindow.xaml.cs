@@ -20,18 +20,20 @@ namespace Draft
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-
             InitializeComponent();
+            DatabaseHandler.Init();
+        }
 
-            WarehouseDataEntities db = new WarehouseDataEntities();
-
-            var storage = from d in db.Items select d;
+        public void ReloadList()
+        {
+            var storage = from d in DatabaseHandler.DataBase.Items select d;
 
             // TODO later move to a seperate class
 
-           GridLength gridLength = new GridLength(30);
+            GridLength gridLength = new GridLength(30);
             GridLength gridWidth = new GridLength(250);
 
 
@@ -39,12 +41,11 @@ namespace Draft
 
             int i = 1;
 
-           foreach(var _item in storage)
+            foreach (var _item in storage)
             {
                 RowDefinition _rowDef = new RowDefinition();
                 _rowDef.Height = gridLength;
 
-                
                 ItemList.RowDefinitions.Add(_rowDef);
 
                 TextBlock _name = new TextBlock();
@@ -67,13 +68,19 @@ namespace Draft
 
                 i++;
             }
-
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            // TODO Detemine if the program can work on a single window
             Window _window = new ItemInsterion();
             _window.Show();
+        }
+
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("RELOADING");
+            ReloadList();
         }
     }
 }

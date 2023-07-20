@@ -11,6 +11,7 @@ namespace Draft
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     
     public partial class Items
     {
@@ -18,5 +19,20 @@ namespace Draft
         public string Name { get; set; }
         public int Quantity { get; set; }
         public string Filters { get; set; }
+
+        private static int currentId = 5;
+
+        public Items()
+        {
+
+        }
+
+        public Items(string name)
+        {
+            Id = currentId++;
+            Name = name;
+            Quantity = 1;
+            Filters = "NONE";
+        }
     }
 }

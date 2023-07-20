@@ -14,7 +14,7 @@
         <Button Content="Delete" HorizontalAlignment="Left" Margin="707,389,0,0" VerticalAlignment="Top" Width="75"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="Search" VerticalAlignment="Top" Width="586" RenderTransformOrigin="0.498,1.232"/>
         <Button Content="Filter" HorizontalAlignment="Left" Margin="601,9,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="707,9,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="SearchButton" Content="Search" HorizontalAlignment="Left" Margin="707,9,0,0" VerticalAlignment="Top" Width="75" Click="SearchButton_Click"/>
         <Grid Name="ItemList" HorizontalAlignment="Left" Height="346" Margin="10,38,0,0" Width="772">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
