@@ -13,14 +13,12 @@ namespace Draft
         
         public static void NewElement(Items item)
         {
-            // TODO make the program check if it should add new elemnt or increase quanitty in existing one
-            string query = "INSERT INTO Items VALUES (" + item.Id +",'" +item.Name+"',"+item.Quantity+",'"+item.Filters+"')";
-           
-            db.Items.SqlQuery(query);
-            db.Items.Add(item);
+            var _alreadyExists = from records in db.Items where records.Name.Equals(item.Name) select records;
+
+            if (_alreadyExists.Count() > 0) IncreaseQuantityForElement(_alreadyExists.First());
+            else AddNewElement(item);
+
             Update();
-            
-            Console.WriteLine("ADDING NEW ELEMENT");
         }
 
         public static void Init()
@@ -32,16 +30,17 @@ namespace Draft
         {
             db.SaveChanges();
            // db.Items.SqlQuery();
-        }
-
-        private static void AddNewElement()
-        {
 
         }
 
-        private static void IncreaseQuantityForElement()
+        private static void AddNewElement(Items item)
         {
+            db.Items.Add(item);
+        }
 
+        private static void IncreaseQuantityForElement(Items item)
+        {
+            item.Quantity++;
         }
 
         public static void RemoveElement()
