@@ -29,9 +29,8 @@ namespace Draft
 
         public void ReloadList()
         {
+            ItemList.Children.Clear();
             var storage = from d in DatabaseHandler.DataBase.Items select d;
-
-            // TODO later move to a seperate class
 
             GridLength gridLength = new GridLength(30);
             GridLength gridWidth = new GridLength(250);
