@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,8 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Data.Common;
-using System.Data;
 
 namespace Draft
 {
@@ -23,56 +20,20 @@ namespace Draft
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
-
             InitializeComponent();
-
-<<<<<<< Updated upstream
-            WarehouseDataEntities db = new WarehouseDataEntities();
-
-            var storage = from d in db.Items select d;
-=======
-        public void LoadDataGrid()
-        {
-            DataTable table = new DataTable("Data table");
-
-            DataColumn name = new DataColumn
-            {
-                DataType = Type.GetType("System.String"),
-                ColumnName = "Name",
-                Unique = true,
-                ReadOnly = true
-            };
-            table.Columns.Add(name);
-
-            DataColumn quantity = new DataColumn
-            {
-                DataType = Type.GetType("System.Int32"),
-                ColumnName = "Quantity",
-                Unique = true,
-                ReadOnly = true
-            };
-            table.Columns.Add(quantity);
-
-            foreach(var record in DatabaseHandler.DataBase.Items)
-            {
-                DataRow _row = table.NewRow();
-                _row["Name"] = record.Name;
-                _row["Quantity"] = record.Quantity;
-            }
-
-            //Storage.ItemsSource = new DataView(table);
-
+            DatabaseHandler.Init();
         }
 
         public void ReloadList()
         {
->>>>>>> Stashed changes
-
             var storage = from d in DatabaseHandler.DataBase.Items select d;
 
-           GridLength gridLength = new GridLength(30);
+            // TODO later move to a seperate class
+
+            GridLength gridLength = new GridLength(30);
             GridLength gridWidth = new GridLength(250);
 
 
@@ -80,12 +41,11 @@ namespace Draft
 
             int i = 1;
 
-           foreach(var _item in storage)
+            foreach (var _item in storage)
             {
                 RowDefinition _rowDef = new RowDefinition();
                 _rowDef.Height = gridLength;
 
-                
                 ItemList.RowDefinitions.Add(_rowDef);
 
                 TextBlock _name = new TextBlock();
@@ -108,9 +68,8 @@ namespace Draft
 
                 i++;
             }
+        }
 
-<<<<<<< Updated upstream
-=======
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             // TODO Detemine if the program can work on a single window
@@ -121,9 +80,7 @@ namespace Draft
         private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             Console.WriteLine("RELOADING");
-            //LoadDataGrid();
             ReloadList();
->>>>>>> Stashed changes
         }
     }
 }

@@ -17,11 +17,30 @@ namespace Draft
     /// <summary>
     /// Interaction logic for Window1.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class ItemInsterion : Window
     {
-        public Window1()
+        public ItemInsterion()
         {
             InitializeComponent();
+        }
+
+        private void GoBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ConfirmData_Click(object sender, RoutedEventArgs e)
+        {
+            string name = InputFormulaTextBox.Text;
+
+            if(name != null)
+            {
+               var _temp = new Items(InputFormulaTextBox.Text);
+
+                DatabaseHandler.NewElement(_temp);
+
+                this.Close();
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ namespace Draft
 {
     using System;
     using System.Collections.Generic;
+    using System.Data.Entity;
     
     public partial class Items
     {
@@ -18,10 +19,8 @@ namespace Draft
         public string Name { get; set; }
         public int Quantity { get; set; }
         public string Filters { get; set; }
-<<<<<<< Updated upstream
-=======
 
-        private static int currentId = 5756;
+        private static int currentId = 5;
 
         public Items()
         {
@@ -35,6 +34,5 @@ namespace Draft
             Quantity = 1;
             Filters = "NONE";
         }
->>>>>>> Stashed changes
     }
 }
